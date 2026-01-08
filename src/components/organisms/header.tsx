@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import NavbarItems from '../molecules/navbar-items'
 
 type Props = {
   user?: {
@@ -18,10 +19,7 @@ const Header: React.FC<Props> = ({ user = { name: 'Jane Doe' } }) => {
         </div>
 
         <nav style={navStyle}>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/projects">Projects</Link>
-          <Link href="/contact">Contact</Link>
+          <NavbarItems />
         </nav>
 
         <div style={userStyle}>
