@@ -4,3 +4,8 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
+// src/lib/utils.ts
+export function cn(...classes: (string | undefined | boolean)[]) {
+  return classes.filter(Boolean).join(" ");
+}
+export default cn;

@@ -1,25 +1,17 @@
-import React from 'react'
-import Link from 'next/link'
+'use client';
 
-type Item = { href: string; label: string }
+import Link from 'next/link';
 
-const items: Item[] = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
-]
-
-const NavbarItems: React.FC = () => {
+export default function Navbar() {
   return (
-    <>
-      {items.map((it) => (
-        <Link key={it.href} href={it.href} style={{ color: 'inherit' }}>
-          {it.label}
-        </Link>
-      ))}
-    </>
-  )
+    <nav className="flex justify-between items-center p-4 shadow">
+      <Link href="/" className="text-xl font-bold">
+        MyStore
+      </Link>
+      <div className="space-x-4">
+        <Link href="/products">Products</Link>
+        <Link href="/cart">Cart</Link>
+      </div>
+    </nav>
+  );
 }
-
-export default NavbarItems
